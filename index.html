@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Historical Timeline</title>
+  <meta charset="utf-8"/>
+
+  <style type="text/css">
+    body, html {
+      font-family: sans-serif;
+    }
+  </style>
+
+  <script src="assets/js/vis.js"></script>
+  <script src="assets/js/tabletop.js"></script>
+  <script src="assets/js/timeline.js"></script>
+  <link href="assets/css/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/custom.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h1>Historical Timeline</h1>
+
+<form onsubmit="return timeline()">
+  <input type="url" id="url" size="90" placeholder="Enter Publish to Web URL from Google Sheets"
+         value="https://docs.google.com/spreadsheets/d/1aBZrZ1sOrfVZUY7LRTGIwktGbXli8dXB-JV20Ii8e4Y/pub"
+         />
+
+  <button type="submit">Load Timeline</button>
+</form>
+
+<div id="visualization">Loading timeline...</div>
+
+<div id="details"></div>
+
+<div id="about">
+  <h3>About</h3>
+
+  <p>This is a timeline to help me visualize events of historical
+    significance.  To use it with your own data, create a Google Sheet
+    following the template below.  Then, click File / Publish to the
+    Web...  Instead of the Entire Document, select a single sheet and
+    click Publish.  Copy the generated URL and paste it in the input
+    field up above.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>content</th>
+        <th>start</th>
+        <th>end</th>
+        <th>type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Praven Siege</td>
+        <td>1123-09-23</td>
+        <td>1124-01-12</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>King Harlaus First Feast</td>
+        <td>1123-09-30</td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Empire of Calradia</td>
+        <td>0988</td>
+        <td>1057</td>
+        <td>background</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>The order of the lines does not matter, though you may find it
+    easier to mantain your document if you follow some logic.  Keep in
+    mind that the column names are case sensitive; it must be
+    <em>content</em> and not <em>Content</em> nor
+    <em>CONTENT</em>.</p>
+
+  <p>You may also want to keep your dates in the ISO format
+    (e.g. 2016-05-37) to avoid problems.  If you only know the year,
+    you can use it, as long as it has four digits (tip: type a single
+    quote before entering numbers that start with zero, so Sheets
+    interprets it as text instead of a number; i.e: '0877).  Other
+    than that, you are free to use any formatting you like.</p>
+
+  <p>You can make some customizations by adding new columns to this
+    table, just read
+    the <a href="http://visjs.org/docs/timeline/#items">vis.js
+    documentation on Items</a>.  Anything more advanced than that
+    probably means you will have to edit the source code.  If you make
+    any changes that are useful for other users, please create a pull
+    request.
+
+  <h3>License</h3>
+
+  <p>This software is released under the <a href="LICENSE">MIT License</a> and
+    it is built on top of <a href="assets/js/LICENSE-visjs">vis.js</a> and
+    <a href="assets/js/LICENSE-TableTop">TableTop</a>.
+  </p>
+</div>
+
+<script type="text/javascript">
+  var url = document.getElementById('url');
+  Tabletop.init({ key: url.value,
+                  callback: createTimeline,
+                  simpleSheet: true });
+</script>
+</body>
+</html>

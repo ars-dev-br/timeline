@@ -1,0 +1,7 @@
+- [ ] Filter by category (Historical event, Literature, Philosophy, etc.)
+- [ ] Filter by location (Continent, Country, etc.)
+- [X] Import from CSV
+- [X] Import from custom spreadsheet
+- [ ] Show details about selected item in area below
+- [X] Add licenses
+- [X] Add how to use it

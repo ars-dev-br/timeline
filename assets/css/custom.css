@@ -1,0 +1,13 @@
+p {
+    max-width: 40em;
+    line-height: 1.50;
+}
+
+table, tr, td, th {
+    border: solid 1px #ddd;
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px;
+}
