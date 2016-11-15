@@ -4,6 +4,7 @@ function createTimeline(results) {
     for (var i = 0; i < results.length; i++) {
         var item = results[i];
         item.id = guid();
+        item.className = item.location;
 
         if (!item.end) {
             item.end = null;
@@ -13,12 +14,20 @@ function createTimeline(results) {
     }
 
     var items = new vis.DataSet(data);
-    var options = {};
+    var options = { orientation: 'both', showCurrentTime: false };
+    var groups = [
+        { id: 'Literature', content: 'Literature' },
+        { id: 'Personality', content: 'Personalities' },
+        { id: 'History', content: 'History' }
+    ];
 
     var container = document.getElementById('visualization');
     container.innerHTML = "";
 
-    var timeline = new vis.Timeline(container, items, options);
+    var timeline = new vis.Timeline(container, items, groups, options);
+    timeline.on('select', function(target) {
+        console.log(items.get(target.items[0]));
+    });
 }
 
 // taken from http://stackoverflow.com/a/105074

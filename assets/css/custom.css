@@ -11,3 +11,18 @@ table, tr, td, th {
 td, th {
     padding: 5px;
 }
+
+.vis-item.america {
+    background-color: #759bc6;
+    border-color: #4b637f;
+}
+
+.vis-item.brazil {
+    background-color: #5faf89;
+    border-color: #3c6d56;
+}
+
+.vis-item.europe {
+    background-color: #f2e8bf;
+    border-color: #bcb495;
+}
