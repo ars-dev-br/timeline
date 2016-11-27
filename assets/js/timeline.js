@@ -14,7 +14,11 @@ function createTimeline(results) {
     }
 
     var items = new vis.DataSet(data);
-    var options = { orientation: 'both', showCurrentTime: false };
+    var options = {
+        height: '750px',
+        orientation: 'both',
+        showCurrentTime: false
+    };
     var groups = [
         { id: 'Literature', content: 'Literature' },
         { id: 'Personality', content: 'Personalities' },
