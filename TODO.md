@@ -1,5 +1,5 @@
-- [X] ~~Filter by category (Historical event, Literature, Philosophy, etc.)~~ **Categorized by lanes instead**
-- [X] ~~Filter by location (Continent, Country, etc.)~~ **Color coded**
+- [X] ~~Filter by category (Historical event, Literature, Philosophy, etc.)~~ *Categorized by lanes instead*
+- [X] ~~Filter by location (Continent, Country, etc.)~~ *Color coded*
 - [X] Import from CSV
 - [X] Import from custom spreadsheet
 - [ ] Show details about selected item in area below
