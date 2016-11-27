@@ -17,6 +17,11 @@ td, th {
     border-color: #4b637f;
 }
 
+.vis-item.asia {
+    background-color: #c46e6a;
+    border-color: #91534f;
+}
+
 .vis-item.brazil {
     background-color: #5faf89;
     border-color: #3c6d56;
