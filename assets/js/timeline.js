@@ -5,6 +5,7 @@ function createTimeline(results) {
         var item = results[i];
         item.id = guid();
         item.className = item.location;
+        item.title = createTitle(item);
 
         if (!item.end) {
             item.end = null;
@@ -32,6 +33,14 @@ function createTimeline(results) {
     timeline.on('select', function(target) {
         console.log(items.get(target.items[0]));
     });
+}
+
+function createTitle(item) {
+    if (item.end) {
+        return item.content + " (" + item.start + " - " + item.end + ")";
+    } else {
+        return item.content + " (" + item.start + ")";
+    }
 }
 
 // taken from http://stackoverflow.com/a/105074
